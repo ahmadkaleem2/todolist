@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+{% block content%}
+
+    
+        <ul class="list-group">
+            {% for i in object_list %}
+            <li class="list-group-item">{{i}} 
+
+                <div class="float-right">
+                    
+                        
+                        <button class="btn btn-warning"><a href="{% url 'todolist:update' i.id %}">Update</a></button>
+                    
+                </div>
+
+
+                <div class="float-right">
+                    <button class="btn btn-danger"><a href="{% url 'todolist:delete' i.id %}">Delete</a></button>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    
+    
+    
+
+
+
+{% endblock %}
